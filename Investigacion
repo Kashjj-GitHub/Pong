@@ -1,0 +1,2 @@
+El circuito original de pong se basaba en la tegnologia de los monitores de rayos catodigos, por lo que no es adecuado para la tegnologia actual.
+Intestigar el movimiento de las paletas, dejando de lado el display, utilizar los leds de la FPGA.
