@@ -1,0 +1,21 @@
+@startuml
+[*] --> Inicio
+
+Inicio : Configurar posiciones iniciales\nMostrar marcador
+Inicio --> Espera : Inicio del juego
+
+Espera : Mostrar mensaje para iniciar el juego\nEsperar entrada del jugador
+Espera --> JuegoActivo : Presiona tecla para iniciar el juego
+
+JuegoActivo :Mover bola según la física del juego\nMover paletas basadas en la entrada del jugador\nDetectar colisiones entre la bola y las paletas\nDetectar si la bola ha cruzado los bordes para puntuar
+JuegoActivo --> Anotacion : La bola pasa el borde de una paleta\nRegistrar punto
+
+JuegoActivo --> FinDelJuego : Se alcanza la puntuación máxima\nO el tiempo del juego se agota
+
+Anotacion : Actualizar el marcador con el nuevo puntaje\nPosicionar la bola en el centro de la pantalla
+Anotacion --> JuegoActivo : Esperar un breve retraso\nReiniciar la bola y continuar el juego
+
+FinDelJuego : Mostrar el marcador final\nAnunciar al ganador del juego
+FinDelJuego --> Inicio : Esperar un breve retraso\nPreparar para el siguiente juego o finalizar
+
+@endum
